@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Line
+  - Planet
+  - Powerup
   layers:
   - Default
   - TransparentFX
@@ -13,10 +16,10 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Line
+  - Obstacles
+  - Powerups
   - 
   - 
   - 
@@ -40,4 +43,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Stars
+    uniqueID: 3598788537
+    locked: 0
+  - name: Player
+    uniqueID: 932377791
+    locked: 0
+  - name: Line
+    uniqueID: 1490258749
+    locked: 0
+  - name: Obstacles
+    uniqueID: 2432566915
+    locked: 0
+  - name: Powerups
+    uniqueID: 1206685615
     locked: 0

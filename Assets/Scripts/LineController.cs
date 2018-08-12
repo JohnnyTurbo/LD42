@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class LineController : MonoBehaviour {
 
-    public float lineSpeed;
+    public float startLineSpeed;
+    public float secondPhaseLineSpeed;
     public float yInputSensitivity;
+    public float timeToMaxSensitivity;
+    public float inputLerpMod;
 
     TrailRenderer mainLineTrailRenderer;
     EdgeCollider2D mainLineEdgeCollider;
     float verticalInput;
+    float curInputLevel;
+    float lineSpeed;
 
     private void Awake()
     {
@@ -17,15 +22,36 @@ public class LineController : MonoBehaviour {
         mainLineEdgeCollider = GetComponent<EdgeCollider2D>();
     }
 
+    private void Start()
+    {
+        curInputLevel = 0f;
+        lineSpeed = startLineSpeed;
+    }
+
     private void Update()
     {
-        verticalInput = Input.GetAxis("Vertical");
+        //verticalInput = Input.GetAxis("Vertical");
+        if(Input.GetKey(KeyCode.UpArrow))
+        {
+            verticalInput = 1f;
+        }
+        else if(Input.GetKey(KeyCode.DownArrow))
+        {
+            verticalInput = -1f;
+        }
+        else
+        {
+            verticalInput = 0f;
+        }
+
+        curInputLevel = Mathf.Lerp(curInputLevel, verticalInput, Time.deltaTime * inputLerpMod);
+
     }
 
     private void FixedUpdate()
     {
         transform.position += ((lineSpeed * Time.deltaTime) * Vector3.right);
-        transform.position += ((verticalInput * yInputSensitivity * Time.deltaTime) * Vector3.up);
+        transform.position += ((yInputSensitivity * curInputLevel * Time.deltaTime) * Vector3.up);
         Vector3[] linePositions = new Vector3[mainLineTrailRenderer.positionCount];
         int numPositionsOnLine = mainLineTrailRenderer.GetPositions(linePositions);
         if (numPositionsOnLine >= 2)
@@ -44,4 +70,13 @@ public class LineController : MonoBehaviour {
         }
     }
 
+    public void StopLine()
+    {
+        lineSpeed = 0f;
+    }
+
+    public void StartLine(int phaseNumber)
+    {
+        lineSpeed = (phaseNumber == 1) ? startLineSpeed : secondPhaseLineSpeed;
+    }
 }
