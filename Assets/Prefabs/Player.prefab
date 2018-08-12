@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 114855412160278680}
   - component: {fileID: 50095639014122154}
   - component: {fileID: 58006109683531864}
-  - component: {fileID: 61115602196526480}
   - component: {fileID: 212864892943813350}
   m_Layer: 0
   m_Name: Player
@@ -42,7 +41,7 @@ GameObject:
   - component: {fileID: 212376722593853824}
   - component: {fileID: 95185495006703840}
   m_Layer: 0
-  m_Name: LD42SpriteSheet_0
+  m_Name: CharAnimator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,31 +109,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!61 &61115602196526480
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1700730389978306}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: 3fcf604ef6ac8984ea3bb646d6c99a56, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!95 &95185495006703840
 Animator:
   serializedVersion: 3

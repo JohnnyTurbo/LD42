@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 4dd883060e7edda4c890ac6d97511705
+  - enabled: 1
+    path: Assets/Scenes/SpaceWalk.unity
+    guid: 4034a0c77638a9140a8d3333ab2a34e2
